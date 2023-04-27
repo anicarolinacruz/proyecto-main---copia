@@ -1,0 +1,304 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Righteous', cursive;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 124vh;
+  flex-wrap: wrap;
+}
+
+#pagina{
+  font-family: sans-serif;
+  padding: 117px 0px 0px;
+  background-image: url(https://i.pinimg.com/564x/78/f6/23/78f623744eb045a8084526e9a94256d0.jpg);
+}
+
+/* banner */
+
+.header{
+  background-color: #167BAC;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.nav-link{
+  color: white;
+  text-decoration: none;
+}
+
+.img{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  line-height: 80px;
+}
+
+.nav-menu{
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item{
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link:hover, .nav-menu-link_active{
+  background: #FC5C7D;
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
+  background: linear-gradient(to right, #6A82FB, #FC5C7D);
+  transition: 0.5s;
+}
+
+.nav-menu-link{
+  padding: 8px 12px;
+  border-radius: 3px;
+
+}
+
+.vetlogo{
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
+  margin-left: 80px;
+}
+
+.toggle{
+  color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  display: none;
+  cursor: pointer;
+}
+
+.nav-menu-link::before{
+  content: '🐾';
+}
+
+/* contactenos */
+
+
+.info-form{
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.container-form{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    margin-top: 50px;
+    border: 5px solid  #667db6;  /* fallback for old browsers */
+  color: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #fff;
+    border-radius: 10px;
+}
+.container-form h2{
+    margin-bottom: 15px;
+    font-size: 35px
+}
+.container-form p{
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.container-form a{
+    font-size: 17px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 700;
+}
+.container-form a i{
+    color: #FC5C7D;
+    margin-right: 10px;
+}
+.container-form form .campo, textarea{
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    outline: 0px;
+}
+.container-form form textarea{
+    max-width: 530px;
+    min-width: 530px;
+    min-height: 140px;
+    max-height: 150px;
+}
+.container-form .btn-enviar{
+  background: #FC5C7D;
+  background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
+  background: linear-gradient(to right, #6A82FB, #FC5C7D);
+  display: block;
+  width: 100px;
+  height: 40px;
+  border:none;
+  color:#fff;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.container-form .btn-enviar:hover{
+    background: #FC5C7D;
+}
+
+
+/* footer */
+
+.piedepagina{
+  width: 100%;
+  background-color: #167BAC;
+  align-self: flex-end;
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.vetlogo1{
+  width: 180px;
+  height: 180px;
+  border-radius: 50px;
+  margin-left: opx;
+}
+
+.piedepagina .grupo-1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 50px;
+  padding: 10px 10px 10px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.piedepagina .grupo-2{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piedepagina .grupo-1 .box h2{
+  color: white;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.piedepagina .grupo-1 p{
+  color: white;
+  margin-bottom: 10px;
+}
+
+.icono{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  margin-right: 10px;
+  background: #167BAC;
+  text-align: center;
+  transition: all 300ms ease;
+}
+
+.icono:hover{
+  color: #CE49BF;;
+}
+
+i{
+  font-size: 30px;
+}
+
+.grupo-2{
+  background-color: #167BAC;
+  padding: 15px 10px;
+  text-align: center;
+  color: white;
+}
+/* media query*/
+
+@media (max-width: 768px){
+  body{
+    padding-top: 70px;
+  }
+
+  .header{
+    height: 60px;
+  }
+
+  .vetlogo{
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    margin-left: 80px;
+  }
+
+  .nav-menu{
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color:#F190B7;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    padding: 20px 0;
+    height: 100%;
+    overflow-y:auto;
+    left: 100%;
+    transition: left 0.5s;
+  }
+
+  .nav-menu-item{
+    line-height: 70px;
+  }
+  .nav-menu-link:hover, .nav-menu-link_active{
+    background: none;
+    color: #A63EC5;
+  }
+
+  .toggle{
+    display: block;
+  }
+
+  .nav-menu_visible{
+    left: 0;
+  }
+
+}

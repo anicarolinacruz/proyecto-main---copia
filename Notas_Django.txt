@@ -1,0 +1,184 @@
+DJANGO
+
+	CREACION DEL PROYECTO
+
+creacion del entorno.
+
+1. conda create -n veterinaria python=3.7
+
+
+activar el entorno .
+
+2. activate veterinaria
+
+
+instalacion de django.
+
+3. pip install django
+
+
+version de django.
+
+4. python -m django --version
+
+
+nos ubicamos en la carpeta donde queremos crear nuestro proyecto.
+
+5. (veterinaria) C:\Users\Jorge Garcia>cd C:\ProyectoFormativo
+
+
+creamos el proyecto donde estaremos haciendo uso de la pagina web.
+
+6.django-admin startproject webjorgeani
+
+
+7.ingresamos al visual studio code y seleccionamos la carpeta webveterinaria.
+
+8.seleccionamos el interprete.
+
+
+instalamos el paquete pylint
+
+9.conda install pylint
+
+
+	CONFIGURACION DEL PROYECTO
+
+
+gerarquia de ficheros que se han creado en en el webveterinaria. estos incluye la configuracion inicial y de despliegue.
+
+* __init__.py : nos indica que la carpeta es un paquete.
+
+* settings.py : es el que contiene la configuracion del proyecro.
+
+* urls.py : es encargado de manejar las direcciones de la web.
+
+* wsgi.py : es el que contiene la informacion para desplegar el proyecto en produccion.
+
+* manage.py : sirve para gestinar nuestro proyecto desde la terminal
+
+
+*manage.py
+
+ RUNSERVER : sirve para poner un servidor de pruebas en marcha.
+
+10. python manage.py runserver
+
+
+*settings.py 
+
+modo de depuracion.
+
+DEBUG = True: es un modo que siempre que ocurra un fallo django nos va mostrar un monton de informacion para analizarla y poder solucionarlo.
+
+DEBUG = False : Cuando publiquemos un proyecto o despliegemos un proyecto de django en internet desactivaremos el modo debug poniendolo en modo false.
+
+
+Nota: si estamos en modo de desarrollo nos interesa tenerlo en marcha osea DEBUG = True. Es muy importante tener descativado el DEBUG A LA HORA DE HACER EL DESPLIEGUE
+
+LANGUAGE_CODE = 'es': django es internacional 
+
+
+11. CREAR LA BASE DE DATOS INICIAL : lo debemos de hacer para que django pueda gestionar un monton de cosas por nosotros. por ejmplo las seciones de usuario, lo propios usuarios o los grupos
+a los que pertenece.es necesario para el administrador. la base de datos se puede configurar desde el fichero settings.py en el apartado DATABASES.
+
+django trabaja con base de datos de squlite y es compatible con unas cuantas. django manje la base datos sqlite3.
+
+
+*manage.py
+
+CONFIGURAR LA BASE DE DATOS : lo haremos sincronizandola.
+
+12. python manage.py migrate
+
+	
+	PRIMERA APP CORE
+
+APLICACIONES INTERNAS QUE IMPLEMENTAN FUNCIONALIDADES ESPECIFICAS.(MODULOS)
+
+las activas en un proyecto de django las encontramos definidas en el fichero settings.py en la lista INSTALLED_APPS, no todas las app en la lista requieren una base de datos, aparte de django crear
+las apps genericas, tambien permite crear app propias, una app no se limita un solo proyecto se puede utilizar en varios.
+
+CREAR APP
+
+13. python manage.py startapp core
+
+dentro de la carpeta core se crean los siguientes ficheros:
+
+* __init__.py
+
+* admin.py
+
+* apps.py
+
+* models.py 
+
+* tests.py
+
+* views.py : se definen las vistas de una app. una vista hace referencia a la logica que se ejecuta cuando se hace una peticion a nuestra web
+
+
+request : es la peticion que se muestre nuestra pagina.
+
+
+
+	PLANTILLAS TEMPLATE
+
+crear el template dentro de app, dentro del template creamos una nueva carpeta llamada core se nombra igual que la ap que se creo anteriormente.
+
+en INSTALLED_APP añadimos la app que hemos creado donde estan las plantillas para ctivarla.
+
+render : dibujado
+
+	HERENCIA EN PLANTILLAS
+
+se basa en crear una plantilla base, con los elementos comunes en todos los templates, y luego cambiar unicamente el contenido en los distintos templates.
+
+
+1. se crea un html base donde los elementos comunes estaran ubicados ahí.
+
+2. se pone debajo del elemento comun un templatetag (etiqueta de template)
+
+
+{% block content %}{% endblock %} --> sirve para definir un bloque de contenido con un nombre.
+
+
+3. se añade en las plantillas que ya hemos creado el templatetag extends para que herede de la base el contenido en comun.
+
+{% extends 'core/base.html' %}
+
+
+4.copiamos el templatetag block content en la plantilla donde donde esta heredando de la base.
+
+{% block content %}{% endblock %}
+
+5. creamos un bloque para que el titulo de la pestaña cambie a medida que se diriga a diferente enlace en el html base (base.html)
+
+<title>{% block title %}{% endblock %} | veterinaria </title>
+
+6. en las diferentes plantillas copiamos {% block title %}{% endblock %} y vamos poniendo su respectivo nombre.
+
+
+	TEMPLATE TAG {_url_}
+
+
+nos permite hacer referencia directamente a una view desde nuestros templates y es la forma correcta de escribir enlaces relativos dentro de nuestra web
+
+{% url 'home' %}--> esto por si desde la urls.py nosotros cambiamos el nombre lo detecte de inmediato, sin necesidad de cambiar nada en las platillas.
+
+
+	FICHEROS ESTATICOS
+
+STATIC/CORE : carpeta que se crea dentro de la app core para que los archivos css carguen en la pagina web
+
+{% load static %}---> sirve para que los ficheros estaticos carguen en la pagina web.
+
+
+
+
+
+
+
+
+
+

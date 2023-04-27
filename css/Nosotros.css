@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Righteous', cursive;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 124vh;
+    flex-wrap: wrap;
+}
+
+#pagina {
+    font-family: sans-serif;
+    padding: 100px 0px 0px;
+    background-image: url(https://i.pinimg.com/564x/78/f6/23/78f623744eb045a8084526e9a94256d0.jpg);
+}
+
+/* banner */
+
+.header {
+    background-color: #167BAC;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    line-height: 80px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    background: #FC5C7D;
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);
+    background: linear-gradient(to right, #6A82FB, #FC5C7D);
+    transition: 0.5s;
+}
+
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+
+}
+
+.vetlogo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    margin-left: 80px;
+}
+
+.toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: none;
+    cursor: pointer;
+}
+
+.nav-menu-link::before {
+    content: '🐾';
+}
+
+ /* carrusel */
+
+
+.content-all {
+    width: 210px;
+    margin: auto;
+    perspective: 800px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.content-carrousel {
+    width: 100%;
+    position: absolute;
+    animation: rotar 10s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.content-carrousel:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+
+.content-carrousel figure {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px black;
+    transition: all 300ms;
+
+}
+
+.content-carrousel figure:hover {
+    box-shadow: 0px 0px 0px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(2) {
+    transform: rotateY(40deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(3) {
+    transform: rotateY(80deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(4) {
+    transform: rotateY(120deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(5) {
+    transform: rotateY(160deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(6) {
+    transform: rotateY(200deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(7) {
+    transform: rotateY(240deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(8) {
+    transform: rotateY(280deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(9) {
+    transform: rotateY(320deg) translateZ(300px);
+}
+
+.content-carrousel figure:nth-child(10) {
+    transform: rotateY(360deg) translateZ(300px);
+}
+
+.content-carrousel img {
+    width: 100%;
+    transition: all 300ms;
+}
+
+.content-carrousel img:hover {
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+
+
+@keyframes rotar {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+/* seccion de ¿Quienes somos?, Misión y Visión */
+
+p {
+    font-size: Verdana;
+}
+
+#general {
+    margin-top: 88px;
+    width: 100%;
+    height: 440px;
+    background-color: #fff;
+    border: 5px solid #667db6;
+    /* fallback for old browsers */
+    color: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    color: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #7a7a7a;
+}
+
+#visionmision {
+    width: 40%;
+    height: 50px;
+    float: right;
+    background-color: transparent;
+}
+
+#quienessomos {
+    width: 50%;
+    height: 250px;
+    background-color: transparent;
+
+}
+
+
+
+/* footer */
+
+.piedepagina {
+    width: 100%;
+    background-color: #167BAC;
+    align-self: flex-end;
+    width: 100%;
+    margin-top: 300px;
+    text-align: center;
+}
+
+.vetlogo1 {
+    width: 180px;
+    height: 180px;
+    border-radius: 50px;
+    margin-left: opx;
+}
+
+.piedepagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+    padding: 10px 10px 10px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.piedepagina .grupo-2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piedepagina .grupo-1 .box h2 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.piedepagina .grupo-1 p {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.icono {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    margin-right: 10px;
+    background: #167BAC;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.icono:hover {
+    color: #CE49BF;
+    ;
+}
+
+i {
+    font-size: 30px;
+}
+
+.grupo-2 {
+    background-color: #167BAC;
+    padding: 15px 10px;
+    text-align: center;
+    color: white;
+}
+
+/* media query*/
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .vetlogo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50px;
+        margin-left: 80px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #F190B7;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        height: 100%;
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.5s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #A63EC5;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+}
